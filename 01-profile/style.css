@@ -1,0 +1,235 @@
+/* ============================================
+   Ploynapat "Belle" Lardchaviang — Profile Page
+   Dark theme — "Purple Team" concept:
+   red + blue merge into purple throughout.
+   ============================================ */
+ 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+ 
+:root {
+  /* Color tokens */
+  --bg: #141019;
+  --bg-footer: #0f0c14;
+  --surface: #1c1826;
+  --surface-border: #2e2838;
+  --text-heading: #f2eff7;
+  --text-body: #c9c4d6;
+  --text-muted: #8d86a3;
+  --accent: #a78bfa;
+  --accent-soft: rgba(167, 139, 250, 0.35);
+  --red: #e05555;
+  --blue: #4d7ff5;
+ 
+  /* Type */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+ 
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+ 
+  --content-width: 860px;
+  --radius: 12px;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(224, 85, 85, 0.10), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(77, 127, 245, 0.10), transparent 45%);
+  background-attachment: fixed;
+  color: var(--text-body);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+ 
+/* ============ Hero ============ */
+.hero {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+ 
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+ 
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-sm);
+}
+ 
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  color: var(--text-heading);
+  margin: 0 0 var(--space-sm);
+}
+ 
+/* Signature element: red -> blue gradient rule under the name,
+   standing for "purple team" = red team + blue team merged */
+.hero-text::after {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 3px;
+  margin-top: var(--space-sm);
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--red), var(--accent) 50%, var(--blue));
+}
+ 
+.tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: var(--space-md) 0 0;
+}
+ 
+.profile-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--red), var(--accent) 50%, var(--blue));
+  box-shadow: 0 0 32px var(--accent-soft);
+}
+ 
+/* ============ Main / Sections ============ */
+main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg) var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+ 
+section {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+}
+ 
+section h2 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-md);
+}
+ 
+section p {
+  margin: 0;
+  max-width: 65ch;
+  color: var(--text-body);
+}
+ 
+section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+ 
+section li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-body);
+}
+ 
+section li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+ 
+/* ============ Footer ============ */
+footer {
+  background: var(--bg-footer);
+  border-top: 1px solid var(--surface-border);
+  padding: var(--space-lg);
+  text-align: center;
+}
+ 
+footer p {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+ 
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+ 
+footer a:hover {
+  text-decoration: underline;
+}
+ 
+/* ============ Responsive ============ */
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: var(--space-xl);
+  }
+ 
+  .hero-text::after {
+    margin-inline: auto;
+  }
+ 
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+ 
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
