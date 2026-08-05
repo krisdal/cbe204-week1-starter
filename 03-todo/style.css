@@ -57,7 +57,7 @@ li {
     cursor: pointer;
 }
 
-li.completed {
+li.completed { 
     text-decoration: line-through;
     color: #6b7280;
 }
