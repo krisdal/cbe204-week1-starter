@@ -9,11 +9,13 @@ function addTask() {
 
     const listItem = document.createElement('li');
     listItem.textContent = taskText;
-
-    /***   FIGURE OUT WHAT THIS CODE DOES 
+    taskList.appendChild(listItem);
+    taskInput.value = '';
+    taskInput.focus();
+    //  FIGURE OUT WHAT THIS CODE DOES 
     listItem.addEventListener('click', () => {
          listItem.classList.toggle('completed');
-    }); ****/
+    }); 
 
     // Add new code here
     // 1. append a new child (listItem) to taskList;
